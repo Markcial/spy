@@ -7,7 +7,27 @@ defmodule Spy.Mixfile do
       version: "0.1.0",
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
-      deps: deps()
+      description: description(),
+      package: package(),
+      deps: deps(),
+      name: "Spy",
+      source_url: "https://github.com/markcial/spy"
+    ]
+  end
+
+  defp description() do
+    "Elixir ssh agent management via port and bash calls"
+  end
+
+  defp package() do
+    [
+      # This option is only needed when you don't want to use the OTP application name
+      name: "spy",
+      # These are the default files included in the package
+      files: ["config", "lib", "test", "mix.exs", "README*", "LICENSE*"],
+      maintainers: ["Marc Garcia Sastre"],
+      licenses: ["MIT License"],
+      links: %{"GitHub" => "https://github.com/markcial/spy"}
     ]
   end
 
